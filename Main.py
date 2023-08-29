@@ -5,6 +5,7 @@ from selenium.webdriver.common.keys import Keys
 import os 
 import pandas as pd
 import glob
+from webdriver_manager.chrome import ChromeDriverManager # as there are different verions of chrome
 # for debugging/testing use these
 # from pprint import pprint
 # from bs4 import BeautifulSoup
@@ -36,6 +37,7 @@ def download_data(ad_lists, User ,Pass, url='https://login.ispot.tv/', consolida
     options.add_experimental_option("prefs",prefs);
     # This will launch a chrome window from python
     driver = webdriver.Chrome(executable_path='./chromedriver',chrome_options=options);
+    # driver = webdriver.Chrome(ChromeDriverManager().install())
 
     driver.get(url) # go to this website
 
